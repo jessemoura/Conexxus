@@ -1,0 +1,232 @@
+empresa:
+  nome: "Conexxus"
+  segmento: "Agência de Marketing Digital / Presença Digital"
+  cidade: "Swindon"
+  estado: "Wiltshire"
+  pais: "GB"
+
+  telefone: "07341462757"
+  whatsapp: "447341462757"
+
+  endereco: ""
+  razao_social: ""
+  cnpj: ""
+
+  horario: ""
+  horario_estruturado:
+    seg_sex: ""
+    sabado: ""
+    domingo: ""
+
+  latitude: ""
+  longitude: ""
+
+  price_range: "$$"
+  bairros_atendidos: ""
+  google_maps_iframe: ""
+
+  logo_path: "/assets/img/CONEXXUS_Logo_Web_Transparente.png"
+  favicon_path: "/assets/img/favicon-conexxus.svg"
+
+  redes_sociais:
+    instagram: "@conexxus.co.uk"
+    facebook: ""
+
+branding:
+  tom: "Profissional, moderno, claro, próximo e confiável"
+
+  paleta:
+    navy: "#003A70"
+    primaria: "#0066B3"
+    cyan: "#00A8E8"
+    signal_blue: "#70D7FF"
+    secundaria: "#181A1B"
+    fundo: "#F4F7FA"
+    texto: "#181A1B"
+    branco: "#FFFFFF"
+
+  proporcao_cores:
+    branco_cloud: "60%"
+    navy_graphite: "25%"
+    brand_blue: "10%"
+    cyan_signal_blue: "5%"
+
+  identidade:
+    estilo: "Moderno, tecnológico, profissional e clean"
+    logo_principal: "/assets/img/CONEXXUS_Logo_Web_Transparente.png"
+    logo_fundo_branco: "/assets/img/CONEXXUS_Logo_Original_Refinado_Fundo_Branco.png"
+    logo_transparente: "/assets/img/CONEXXUS_Logo_Original_Refinado_Transparente.png"
+    foto_perfil: "/assets/img/CONEXXUS_Foto_Perfil_Instagram(1).png"
+    favicon_png: "/assets/img/favicon-conexxus(1).png"
+    favicon_svg: "/assets/img/favicon-conexxus.svg"
+
+seo:
+  palavra_chave_principal: "digital marketing agency Swindon"
+
+  palavras_secundarias:
+    - "website design Swindon"
+    - "local SEO Swindon"
+    - "Google Business Profile services"
+    - "digital marketing for small businesses"
+    - "website design for small businesses"
+    - "local SEO for small businesses"
+    - "branding for small businesses"
+    - "social media management for small businesses"
+
+  area_atuacao: "Brasil e Europa, incluindo Reino Unido, Portugal, Espanha e Itália"
+
+  local_principal:
+    cidade: "Swindon"
+    condado: "Wiltshire"
+    pais: "United Kingdom"
+
+  idiomas:
+    - "Português"
+    - "English"
+
+publico_alvo:
+  principal: "Pequenas e médias empresas"
+  descricao: "Empresas que precisam criar, profissionalizar ou fortalecer sua presença digital e facilitar a conexão com seus clientes."
+
+servicos:
+  - nome: "Criação de Websites"
+    descricao: "Desenvolvimento de websites profissionais e responsivos para pequenas e médias empresas."
+    slug: "criacao-de-websites"
+    imagem: "/assets/img/conexxus-website-design-services.webp"
+    alt: "Responsive website design services for small businesses."
+
+  - nome: "SEO Local"
+    descricao: "Estratégias de presença e visibilidade local para ajudar empresas a serem encontradas online."
+    slug: "seo-local"
+    imagem: "/assets/img/conexxus-local-seo-small-business.webp"
+    alt: "Local SEO services helping small businesses get found online."
+
+  - nome: "Google Business Profile"
+    descricao: "Suporte estratégico para presença de empresas no Google e pesquisas locais."
+    slug: "google-business-profile"
+    imagem: "/assets/img/conexxus-google-business-profile-services.webp"
+    alt: "Google Business Profile support for local businesses."
+
+  - nome: "Branding"
+    descricao: "Desenvolvimento de identidade de marca para fortalecer a apresentação profissional da empresa."
+    slug: "branding"
+    imagem: "/assets/img/conexxus-branding-brand-identity.webp"
+    alt: "Brand identity design for small businesses."
+
+  - nome: "Gestão de Redes Sociais"
+    descricao: "Planejamento e gestão de conteúdo para a presença digital de pequenas empresas."
+    slug: "gestao-de-redes-sociais"
+    imagem: "/assets/img/conexxus-social-media-management.webp"
+    alt: "Social media content planning and management for small businesses."
+
+diferenciais:
+  - "Atuação no Brasil e na Europa"
+  - "Atendimento em português e inglês"
+  - "Soluções digitais voltadas para pequenas e médias empresas"
+  - "Integração entre website, presença digital e visibilidade local"
+  - "Foco em facilitar a conexão entre empresas e clientes"
+
+prova_social: []
+
+objecoes_clientes: []
+
+cta_principal: "Falar no WhatsApp"
+
+conversao:
+  tipo: "WhatsApp"
+  numero: "447341462757"
+  formulario_contato: false
+
+dominio: "www.conexxus.co.uk"
+
+paginas:
+  home:
+    slug: "/"
+    imagem_hero: "/assets/img/conexxus-digital-marketing-small-business-hero.webp"
+    alt_hero: "Small business owner using digital marketing support from Conexxus."
+    lazy_loading_hero: false
+
+  servicos:
+    slug: "/servicos"
+
+  sobre:
+    slug: "/sobre"
+    imagem_principal: "/assets/img/conexxus-digital-marketing-agency-swindon.webp"
+    alt_principal: "Conexxus digital marketing agency supporting small businesses in Swindon."
+
+  portfolio:
+    slug: "/portfolio"
+    imagem_principal: "/assets/img/conexxus-digital-projects-portfolio.webp"
+    alt_principal: "Responsive website projects created for small businesses."
+
+  contato:
+    slug: "/contato"
+    conversao: "WhatsApp"
+    formulario: false
+    imagem: "/assets/img/conexxus-small-business-whatsapp-support.webp"
+    alt: "Small-business owner contacting Conexxus for digital marketing support."
+
+secoes_especiais:
+  atendimento_bilingue:
+    titulo: "Atendimento em Português e Inglês"
+    imagem: "/assets/img/conexxus-bilingual-digital-marketing-support.webp"
+    alt: "Bilingual digital marketing support in English and Portuguese."
+
+  atuacao_internacional:
+    titulo: "Atuação Internacional"
+    imagem: "/assets/img/conexxus-international-client-support.webp"
+    alt: "International digital marketing support for small-business clients."
+
+  fundador:
+    titulo: "Founder"
+    imagem: "/assets/img/conexxus-founder-digital-marketing-swindon.webp"
+    alt: "Founder of Conexxus Digital Marketing in Swindon."
+
+imagens:
+  formato: "WebP"
+  largura: 1536
+  altura: 1024
+  orientacao: "horizontal"
+  perfil_cor: "sRGB"
+  lazy_loading_padrao: true
+  hero_lazy_loading: false
+  otimizadas_para_web: true
+
+pacotes:
+  pacote_1:
+    nome: "Presença Digital Essencial"
+    fixo: "R$ 2.620,00"
+    mensal: "R$ 165,00"
+    inclui:
+      - "Desenvolvimento Site One Page"
+      - "Domínio Internacional (3 anos)"
+      - "Hospedagem Corporativa (3 anos)"
+      - "Manutenção & Governança do Site"
+
+  pacote_2:
+    nome: "Presença & Visibilidade"
+    fixo: "R$ 2.620,00"
+    mensal: "R$ 345,00"
+    inclui:
+      - "Desenvolvimento Site One Page"
+      - "Domínio Internacional (3 anos)"
+      - "Hospedagem Corporativa (3 anos)"
+      - "Manutenção & Governança do Site"
+      - "Gestão Estratégica Google (GMN)"
+
+  pacote_3:
+    nome: "Infraestrutura Completa"
+    fixo: ""
+    mensal: ""
+    inclui: []
+
+dados_pendentes:
+  - "Endereço completo"
+  - "Razão social / dados legais aplicáveis"
+  - "Horário de funcionamento"
+  - "Latitude e longitude"
+  - "Link do Google Maps"
+  - "Facebook, caso exista"
+  - "Depoimentos e avaliações"
+  - "Principais objeções dos clientes"
+  - "Composição e valores completos do Pacote 3"

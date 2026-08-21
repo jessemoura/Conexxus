@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing for Small Businesses | Conexxus Swindon</title>
+    <meta name="description" content="Discover how digital marketing can help small businesses build a stronger online presence, connect with customers and grow their visibility online.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#003A70',
+                        brand: '#0066B3',
+                        champagne_gold: '#D6B66A',
+                        champagne_light: '#E8D39B',
+                        cloud: '#F4F7FA',
+                        graphite: '#181A1B',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-graphite bg-white antialiased">
+    <!-- HEADER -->
+    <header x-data="{ mobileMenuOpen: false, isScrolled: false }" @scroll.window="isScrolled = (window.scrollY > 20)" class="site-header fixed w-full top-0 z-[999] transition-all duration-300 text-white" :class="{ 'bg-navy shadow-lg py-2': mobileMenuOpen || isScrolled, 'bg-transparent py-4': !mobileMenuOpen && !isScrolled }">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="../index.html" class="flex-shrink-0">
+                <img src="../../06-imagens/Conexxus-digital-marketing-logo-transparent.png" alt="Conexxus Logo" class="h-10 w-auto">
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 font-semibold">
+                <a href="../index.html" class="hover:text-champagne_gold transition-colors">Home</a>
+
+                <!-- Dropdown ServiÃƒÂ§os -->
+                <div x-data="{ open: false }" class="relative" @mouseenter="open = true" @mouseleave="open = false" @click.outside="open = false">
+                    <a href="../servicos.html" class="flex items-center gap-1 hover:text-champagne_gold transition-colors">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <div x-show="open" style="display: none;" x-transition.opacity class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-3 text-graphite border border-gray-100">
+                        <a href="../servicos/criacao-de-websites.html" class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors">Website Design</a>
+                        <a href="../servicos/seo-local.html" class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors">Local SEO</a>
+                        <a href="../servicos/google-business-profile.html" class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors">Google Business Profile</a>
+
+                    </div>
+                </div>
+
+                <a href="../sobre.html" class="hover:text-champagne_gold transition-colors">About</a>
+                <a href="../portfolio.html" class="hover:text-champagne_gold transition-colors">Portfolio</a>
+                <a href="../blog.html" class="text-champagne_gold transition-colors">Blog</a>
+                <a href="../contato.html" class="hover:text-champagne_gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Desktop & Socials -->
+            <div class="hidden lg:flex items-center gap-5">
+                <div class="flex items-center gap-3">
+                    <a href="https://instagram.com/conexxus.co.uk" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white shadow-[0_0_12px_rgba(225,48,108,0.5)] hover:scale-110 transition-transform" title="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="mailto:hello@conexxus.co.uk" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#00A8E8] text-white shadow-[0_0_12px_rgba(0,168,232,0.5)] hover:scale-110 transition-transform" title="Email">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
+                <div class="h-6 w-px bg-white/30 hidden lg:block"></div>
+                <a href="https://wa.me/447341462757" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    Talk to Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-white focus:outline-none z-50">
+                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg x-show="mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition.origin.top class="lg:hidden bg-navy w-full border-t border-blue-900/50 absolute top-full left-0 py-4 shadow-xl">
+            <nav class="flex flex-col space-y-4 px-6 text-lg font-medium">
+                <a href="../index.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Home</a>
+                <a href="../servicos.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Services</a>
+                <a href="../sobre.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">About</a>
+                <a href="../portfolio.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Portfolio</a>
+                <a href="../blog.html" class="text-champagne_gold" @click="mobileMenuOpen = false">Blog</a>
+                <a href="../contato.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Contact</a>
+                <div class="pt-4 mt-2 border-t border-blue-900/50">
+                    <a href="https://wa.me/447341462757" class="btn-whatsapp w-full justify-center">Talk to Us on WhatsApp</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- BREADCRUMBS -->
+    <div class="bg-navy pt-32 pb-8">
+        <div class="container mx-auto px-6">
+            <nav class="text-sm text-blue-200 breadcrumbs">
+                <a href="../index.html">Home</a> &gt; <a href="../blog.html">Blog</a> &gt; <span class="text-white">Digital Marketing for Small Businesses</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ARTICLE HEADER -->
+    <section class="bg-navy text-white pb-16">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Digital Marketing for Small Businesses: How to Build a Stronger Online Presence</h1>
+        </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <article class="section-padding bg-white pt-8">
+        <div class="container mx-auto px-6 max-w-4xl mb-12">
+            <img src="../../06-imagens/digital-marketing-for-small-businesses-conexxus.webp" alt="Digital Marketing for Small Businesses" class="w-full rounded-2xl shadow-xl object-cover">
+        </div>
+        <div class="container mx-auto px-6 max-w-3xl text-lg text-gray-700 space-y-6 leading-relaxed">
+            <p>For a small business, being online is no longer simply about having a website or a social media account. It is about being present when potential customers are searching, building trust before the first conversation and making it easy for people to understand what your business offers.</p>
+            <p>That is where digital marketing becomes valuable.</p>
+            <p>At Conexxus, we believe digital presence should create connections. A website, a Google Business Profile, local search visibility, branding and social media should not exist as isolated pieces. Together, they should help connect your business with the people who are already looking for what you offer.</p>
+            <p>Based in Swindon, Wiltshire, Conexxus supports small and medium-sized businesses in building professional, clear and connected digital experiences.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">What Does Digital Marketing Mean for a Small Business?</h2>
+            <p>Digital marketing covers the different ways a business presents itself, communicates and becomes discoverable online.</p>
+            <p>For a small business, this does not necessarily mean being everywhere.</p>
+            <p>It means building the right digital foundations so customers can find your business, understand what you do, trust your brand and contact you easily.</p>
+            <p>A strong digital presence can include:</p>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+                <li>A professional website</li>
+                <li>Local SEO</li>
+                <li>Google Business Profile</li>
+                <li>Consistent branding</li>
+                <li>Social media presence</li>
+                <li>Clear ways for customers to get in touch</li>
+            </ul>
+            <p>When these elements work together, your digital presence becomes more than a collection of online profiles. It becomes part of the customer journey.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Why Digital Presence Matters for Small Businesses</h2>
+            <p>Before contacting a company, customers often search online.</p>
+            <p>They may visit the company website, check its Google presence, look through social media or compare several businesses before deciding who to contact.</p>
+            <p>That means your digital presence often creates an impression of your business before you ever speak to the customer.</p>
+            <p>A clear and professional presence can help potential customers answer important questions:</p>
+            <ul class="list-none space-y-2 font-semibold text-navy my-6 bg-cloud p-6 rounded-xl border border-gray-100">
+                <li>&bull; Who are you?</li>
+                <li>&bull; What do you offer?</li>
+                <li>&bull; Where do you operate?</li>
+                <li>&bull; Can I trust this business?</li>
+                <li>&bull; How can I contact you?</li>
+            </ul>
+            <p>The easier these answers are to find, the easier it becomes for a potential customer to take the next step.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Your Website Is the Digital Home of Your Business</h2>
+            <p>Social media platforms can help people discover your business, but your website is the space that your business controls.</p>
+            <p>A professional small business website should clearly communicate who you are, what you offer and how customers can contact you.</p>
+            <p>It should also work properly across desktop, tablet and mobile devices.</p>
+            <p>Good website design is not only about appearance. Structure, usability, speed, content and search visibility all contribute to the experience.</p>
+            <p>For businesses looking for professional <a href="../servicos/criacao-de-websites.html" class="text-brand font-semibold hover:underline">website design in Swindon</a>, having a website built around both the customer journey and search visibility can create a stronger foundation for the rest of the digital strategy.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Local SEO Helps Customers Find Your Business</h2>
+            <p>For businesses serving a particular town, city or region, local visibility can be particularly important.</p>
+            <p>Local SEO focuses on helping search engines understand what your business offers and where it operates.</p>
+            <p>For example, someone searching for a service in Swindon may use Google to find businesses located in or serving the area.</p>
+            <p>A well-structured website, relevant local content and an optimised business presence can help search engines better understand the relationship between your services and your location.</p>
+            <p>Local SEO is not about guaranteeing a particular Google position. It is about building stronger signals that make your business more relevant and easier to understand in local searches.</p>
+            <p>Learn more about <a href="../servicos/seo-local.html" class="text-brand font-semibold hover:underline">Local SEO in Swindon</a>.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Google Business Profile Connects Search With Your Business</h2>
+            <p>Google Business Profile can play an important role in local digital visibility.</p>
+            <p>It gives businesses an opportunity to present important information directly within Google Search and Maps, depending on eligibility and Google's platform requirements.</p>
+            <p>Business information should be accurate and consistent. This can include details such as services, contact information, business category, opening hours and other relevant information.</p>
+            <p>A well-maintained Google Business Profile can complement your website and Local SEO strategy, helping create a more consistent presence across Google. Discover our <a href="../servicos/google-business-profile.html" class="text-brand font-semibold hover:underline">Google Business Profile services</a>.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Branding Creates Recognition and Trust</h2>
+            <p>Your brand is more than a logo.</p>
+            <p>It includes the colours, typography, visual identity, tone of voice and overall experience people associate with your business.</p>
+            <p>For small businesses, consistency matters. When your website, social media and other digital channels share the same visual language and message, the business can appear more organised and professional.</p>
+            <p>Strong branding helps people recognise your business and understand how you want to be perceived. Explore .</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Social Media Keeps the Connection Going</h2>
+            <p>While a website provides a permanent digital home for your business, social media provides opportunities for ongoing communication.</p>
+            <p>It can help businesses share updates, demonstrate their work, communicate their personality and stay visible to their audience.</p>
+            <p>However, social media works best when it forms part of a wider digital presence. The visual identity, tone and message should feel connected to the website and the rest of the brand.</p>
+            <p>This creates a more consistent experience wherever a potential customer discovers your business. Learn about .</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">The Most Important Part Is the Connection</h2>
+            <p>Digital marketing can involve websites, search engines, social platforms and technology.</p>
+            <p>But behind every search, click and message is a person. Someone looking for a service. Someone comparing businesses. Someone trying to solve a problem. Someone deciding who they can trust.</p>
+            <p>This is the idea behind Conexxus. We see digital presence as the bridge between a business and the people it wants to reach.</p>
+            <p>Technology provides the tools. Strategy creates the direction. But connection is the purpose.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">How the Different Parts of Your Digital Presence Work Together</h2>
+            <p>Imagine a potential customer searching online for a service. They discover your business through Google. They visit your website. The website clearly explains what you offer. The branding feels professional and consistent. They may then visit your social media to learn more about the business. Finally, they decide to contact you.</p>
+            <p>Each digital touchpoint supports the next. This is why website design, Local SEO, Google Business Profile, branding and social media should not be treated as completely separate elements.</p>
+            <p>Together, they create a connected customer journey.</p>
+
+            <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Digital Marketing Support in Swindon and Beyond</h2>
+            <p>Conexxus is based in Swindon, Wiltshire, and provides digital marketing support for small and medium-sized businesses.</p>
+            <p>Our services include website design, Local SEO, Google Business Profile support, branding and social media management.</p>
+            <p>We also provide bilingual support in English and Portuguese and work with businesses across the UK and internationally, including clients in Europe and Brazil.</p>
+            <p>Our goal is simple: To help businesses build a digital presence that makes them easier to find, easier to understand and easier to contact.</p>
+
+            <div class="mt-16 bg-cloud p-10 rounded-3xl border border-gray-100 text-center">
+                <h2 class="text-3xl font-bold text-navy mb-4">Ready to Build a Stronger Digital Presence?</h2>
+                <p class="text-gray-600 mb-8 max-w-xl mx-auto">Your business already has a story. The right digital presence helps the right people discover it. Conexxus brings together website design, Local SEO, Google Business Profile, branding and social media to create a clearer connection between businesses and their customers.</p>
+                <a href="https://wa.me/447341462757" target="_blank" class="btn-whatsapp inline-flex items-center gap-2 text-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    Talk to Conexxus on WhatsApp
+                </a>
+            </div>
+
+            <hr class="my-16 border-gray-200">
+
+            <h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">What is digital marketing for small businesses?</h3>
+                    <p class="text-gray-600">Digital marketing for small businesses includes the online strategies and platforms used to help a business build visibility, communicate its services and connect with potential customers. This can include websites, Local SEO, Google Business Profile, branding and social media.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">Does a small business really need a website?</h3>
+                    <p class="text-gray-600">A professional website gives a business its own digital space where customers can learn about its services, understand the brand and find clear contact information. It can also support search visibility and other digital marketing activities.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">What is Local SEO?</h3>
+                    <p class="text-gray-600">Local SEO focuses on improving how clearly search engines understand a business, its services and the geographic areas it serves. It is particularly relevant for businesses that depend on customers within a specific town, city or region.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">Can digital marketing help customers find my business on Google?</h3>
+                    <p class="text-gray-600">A combination of website optimisation, relevant content, Local SEO and Google Business Profile management can help strengthen a business's presence in Google Search. Results depend on many factors, so no legitimate strategy should guarantee a specific ranking.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">What is Google Business Profile?</h3>
+                    <p class="text-gray-600">Google Business Profile is a Google platform that allows eligible businesses to manage information that may appear across Google Search and Maps. Maintaining accurate information can support a business's local digital presence.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">Why is branding important for a small business?</h3>
+                    <p class="text-gray-600">Consistent branding helps customers recognise a business and creates a more professional experience across websites, social media and other communication channels.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">Should my website and social media have the same branding?</h3>
+                    <p class="text-gray-600">They should feel visually and strategically connected. Consistent colours, typography, imagery, tone and messaging can create a stronger and more recognisable brand experience.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-2">Does Conexxus only work with businesses in Swindon?</h3>
+                    <p class="text-gray-600">No. Conexxus is based in Swindon, Wiltshire, but supports small and medium-sized businesses across the UK and internationally, including businesses in Europe and Brazil.</p>
+                </div>
+            </div>
+
+        </div>
+    </article>
+    <footer class="site-footer bg-graphite text-gray-400 pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <img src="../06-imagens/Conexxus-digital-marketing-logo-transparent.png" alt="Conexxus Logo" class="h-12 w-auto">
+                    <p class="text-champagne_gold font-semibold italic">Connecting businesses with people.</p>
+                    <p class="text-sm leading-relaxed mt-4">
+                        Digital Marketing Agency<br>
+                        Swindon, Wiltshire, United Kingdom
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Links</h4>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="/index.html" class="hover:text-white transition-colors">Home</a>
+                        <a href="/servicos.html" class="hover:text-white transition-colors">Services</a>
+                        <a href="/sobre.html" class="hover:text-white transition-colors">About</a>
+                        <a href="/portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                        <a href="/blog.html" class="hover:text-white transition-colors">Blog</a>
+                        <a href="/index.html#faq" class="hover:text-white transition-colors">FAQ</a>
+                        <a href="/contato.html" class="hover:text-white transition-colors">Contact</a>
+                        <a href="/privacidade.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>07341 462757</li>
+                        <li><a href="https://wa.me/447341462757" target="_blank" class="hover:text-[#25D366] transition-colors flex items-center gap-2"><svg class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> WhatsApp</a></li>
+                        <li><a href="https://instagram.com/conexxus.co.uk" target="_blank" class="hover:text-[#E1306C] transition-colors flex items-center gap-2"><svg class="w-5 h-5 text-[#E1306C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram @conexxus.co.uk</a></li>
+                        <li><a href="mailto:hello@conexxus.co.uk" class="hover:text-[#00A8E8] transition-colors flex items-center gap-2"><svg class="w-5 h-5 text-[#00A8E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> hello@conexxus.co.uk</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Conexxus Digital Marketing. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="/privacidade.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/termos.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Digital Marketing for Small Businesses: How to Build a Stronger Online Presence",
+      "author": {
+        "@type": "Organization",
+        "name": "Conexxus"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Conexxus",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.conexxus.co.uk/06-imagens/Conexxus-digital-marketing-logo-transparent.png"
+        }
+      },
+      "datePublished": "2026-08-21",
+      "description": "Discover how digital marketing can help small businesses build a stronger online presence, connect with customers and grow their visibility online."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is digital marketing for small businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Digital marketing for small businesses includes the online strategies and platforms used to help a business build visibility, communicate its services and connect with potential customers. This can include websites, Local SEO, Google Business Profile, branding and social media."
+        }
+      },{
+        "@type": "Question",
+        "name": "Does a small business really need a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website gives a business its own digital space where customers can learn about its services, understand the brand and find clear contact information. It can also support search visibility and other digital marketing activities."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is Local SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local SEO focuses on improving how clearly search engines understand a business, its services and the geographic areas it serves. It is particularly relevant for businesses that depend on customers within a specific town, city or region."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can digital marketing help customers find my business on Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A combination of website optimisation, relevant content, Local SEO and Google Business Profile management can help strengthen a business's presence in Google Search. Results depend on many factors, so no legitimate strategy should guarantee a specific ranking."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is Google Business Profile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google Business Profile is a Google platform that allows eligible businesses to manage information that may appear across Google Search and Maps. Maintaining accurate information can support a business's local digital presence."
+        }
+      },{
+        "@type": "Question",
+        "name": "Why is branding important for a small business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consistent branding helps customers recognise a business and creates a more professional experience across websites, social media and other communication channels."
+        }
+      },{
+        "@type": "Question",
+        "name": "Should my website and social media have the same branding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They should feel visually and strategically connected. Consistent colours, typography, imagery, tone and messaging can create a stronger and more recognisable brand experience."
+        }
+      },{
+        "@type": "Question",
+        "name": "Does Conexxus only work with businesses in Swindon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Conexxus is based in Swindon, Wiltshire, but supports small and medium-sized businesses across the UK and internationally, including businesses in Europe and Brazil."
+        }
+      }]
+    }
+    </script>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-[9999]">
+        <a href="https://wa.me/447341462757" target="_blank" class="relative flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-green-600 transition-colors" title="Talk on WhatsApp">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping"></span>
+            <svg class="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        </a>
+    </div>
+
+    <!-- Google Translate Script -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,pt,es',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function translateLanguage(lang) {
+            var selectField = document.querySelector("select.goog-te-combo");
+            if (selectField) {
+                selectField.value = lang;
+                selectField.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- End Google Translate Script -->
+</body>
+</html>

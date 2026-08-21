@@ -1,0 +1,58 @@
+CONEXXUS — GUIA DE IMAGENS DO SITE
+
+1. conexxus-digital-marketing-small-business-hero.webp
+Uso: Página inicial — banner principal.
+Alt: Small business owner using digital marketing support from Conexxus.
+Carregamento: Prioritário; não usar lazy loading.
+
+2. conexxus-website-design-services.webp
+Uso: Página de serviços — Criação de Websites.
+Alt: Responsive website design services for small businesses.
+
+3. conexxus-local-seo-small-business.webp
+Uso: Página de serviços — SEO Local.
+Alt: Local SEO services helping small businesses get found online.
+
+4. conexxus-google-business-profile-services.webp
+Uso: Página de serviços — Google Business Profile.
+Alt: Google Business Profile support for local businesses.
+
+5. conexxus-branding-brand-identity.webp
+Uso: Página de serviços — Branding.
+Alt: Brand identity design for small businesses.
+
+6. conexxus-social-media-management.webp
+Uso: Página de serviços — Gestão de Redes Sociais.
+Alt: Social media content planning and management for small businesses.
+
+7. conexxus-digital-marketing-agency-swindon.webp
+Uso: Página Sobre — apresentação da CONEXXUS.
+Alt: Conexxus digital marketing agency supporting small businesses in Swindon.
+
+8. conexxus-bilingual-digital-marketing-support.webp
+Uso: Página Sobre ou seção de diferenciais — atendimento em português e inglês.
+Alt: Bilingual digital marketing support in English and Portuguese.
+
+9. conexxus-international-client-support.webp
+Uso: Página Sobre ou seção de atuação internacional.
+Alt: International digital marketing support for small-business clients.
+
+10. conexxus-digital-projects-portfolio.webp
+Uso: Página Portfólio — imagem de abertura.
+Alt: Responsive website projects created for small businesses.
+
+11. conexxus-small-business-whatsapp-support.webp
+Uso: Seção final de contato — chamada para o WhatsApp.
+Alt: Small-business owner contacting Conexxus for digital marketing support.
+
+12. conexxus-founder-digital-marketing-swindon.webp
+Uso: Página Sobre — seção Founder / Sobre o fundador.
+Alt: Founder of Conexxus Digital Marketing in Swindon.
+
+ESPECIFICAÇÕES
+- Formato: WebP
+- Dimensões: 1536 × 1024 px
+- Orientação: horizontal
+- Perfil de cor: sRGB
+- Arquivos otimizados para web
+- Lazy loading recomendado em todas, exceto no banner principal

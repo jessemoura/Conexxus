@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local SEO Services | Conexxus Digital Marketing</title>
+    <meta name="description" content="Strategies designed to improve local digital visibility and strengthen the connection between your business and location-based searches.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#003A70',
+                        brand: '#0066B3',
+                        champagne_gold: '#D6B66A',
+                        champagne_light: '#E8D39B',
+                        cloud: '#F4F7FA',
+                        graphite: '#181A1B',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-graphite bg-white antialiased">
+    <!-- HEADER -->
+    <header x-data="{ mobileMenuOpen: false, isScrolled: false }" @scroll.window="isScrolled = (window.scrollY > 20)" class="site-header fixed w-full top-0 z-[999] transition-all duration-300 text-white" :class="{ 'bg-navy shadow-lg py-2': mobileMenuOpen || isScrolled, 'bg-transparent py-4': !mobileMenuOpen && !isScrolled }">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="../index.html" class="flex-shrink-0">
+                <img src="../../06-imagens/Conexxus-digital-marketing-logo-transparent.png" alt="Conexxus Logo" class="h-10 w-auto">
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 font-semibold">
+                <a href="../index.html" class="hover:text-champagne_gold transition-colors">Home</a>
+
+                <!-- Dropdown ServiÃƒÂ§os -->
+                <div x-data="{ open: false }" class="relative" @mouseenter="open = true" @mouseleave="open = false" @click.outside="open = false">
+                    <a href="../servicos.html" class="flex items-center gap-1 text-champagne_gold transition-colors">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <div x-show="open" style="display: none;" x-transition.opacity class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-3 text-graphite border border-gray-100">
+                        <a href="../servicos/criacao-de-websites.html" class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors">Website Design</a>
+                        <a href="../servicos/seo-local.html" class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors">Local SEO</a>
+                        <a href="../servicos/google-business-profile.html" class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors">Google Business Profile</a>
+
+                    </div>
+                </div>
+
+                <a href="../sobre.html" class="hover:text-champagne_gold transition-colors">About</a>
+                <a href="../portfolio.html" class="hover:text-champagne_gold transition-colors">Portfolio</a>
+                <a href="../blog.html" class="hover:text-champagne_gold transition-colors">Blog</a>
+                <a href="../contato.html" class="hover:text-champagne_gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Desktop & Socials -->
+            <div class="hidden lg:flex items-center gap-5">
+                <div class="flex items-center gap-3">
+                    <a href="https://instagram.com/conexxus.co.uk" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white shadow-[0_0_12px_rgba(225,48,108,0.5)] hover:scale-110 transition-transform" title="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="mailto:hello@conexxus.co.uk" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#00A8E8] text-white shadow-[0_0_12px_rgba(0,168,232,0.5)] hover:scale-110 transition-transform" title="Email">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
+                <div class="h-6 w-px bg-white/30 hidden lg:block"></div>
+                <a href="https://wa.me/447341462757" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    Talk to Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-white focus:outline-none z-50">
+                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg x-show="mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition.origin.top class="lg:hidden bg-navy w-full border-t border-blue-900/50 absolute top-full left-0 py-4 shadow-xl">
+            <nav class="flex flex-col space-y-4 px-6 text-lg font-medium">
+                <a href="../index.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Home</a>
+                <a href="../servicos.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Services</a>
+                <a href="../sobre.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">About</a>
+                <a href="../portfolio.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Portfolio</a>
+                <a href="../blog.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Blog</a>
+                <a href="../contato.html" class="hover:text-champagne_gold" @click="mobileMenuOpen = false">Contact</a>
+                <div class="pt-4 mt-2 border-t border-blue-900/50">
+                    <a href="https://wa.me/447341462757" class="btn-whatsapp w-full justify-center">Talk to Us on WhatsApp</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-navy">
+            <img src="../../06-imagens/conexxus-local-seo-small-business.webp" alt="Local SEO" class="w-full h-full object-cover mix-blend-overlay opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy to-transparent"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-white">
+            <div class="max-w-3xl">
+                <h6 class="text-champagne_gold font-bold tracking-widest uppercase mb-3 text-sm">Services</h6>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Local SEO Services in Swindon</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold text-navy mb-6">What Is Local SEO?</h2>
+                <div class="text-lg text-gray-600 space-y-4">
+                    <p>Local SEO is the process of strengthening a business's online presence for searches related to a specific service and geographic area.</p>
+                    <p>For a local business, being visible when customers search for nearby services can be an important part of generating awareness and enquiries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-cloud border-y border-gray-100">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy mb-6">Who Is Local SEO For?</h2>
+            <p class="text-lg text-gray-700 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                This service is designed for local businesses that serve customers in specific cities, towns or surrounding areas and want to improve the consistency and relevance of their digital presence.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-navy text-center">How Local SEO Works</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="flex gap-6 bg-cloud p-6 rounded-xl shadow-sm"><div class="w-12 h-12 rounded-full bg-brand text-white font-bold flex items-center justify-center flex-shrink-0 text-xl shadow-md">1</div><div><h4 class="text-xl font-bold text-navy mb-2">Review</h4><p class="text-gray-600">We assess the existing local digital presence.</p></div></div>
+                <div class="flex gap-6 bg-cloud p-6 rounded-xl shadow-sm"><div class="w-12 h-12 rounded-full bg-brand text-white font-bold flex items-center justify-center flex-shrink-0 text-xl shadow-md">2</div><div><h4 class="text-xl font-bold text-navy mb-2">Location and Service Structure</h4><p class="text-gray-600">Relevant services and geographic information are organised clearly.</p></div></div>
+                <div class="flex gap-6 bg-cloud p-6 rounded-xl shadow-sm"><div class="w-12 h-12 rounded-full bg-brand text-white font-bold flex items-center justify-center flex-shrink-0 text-xl shadow-md">3</div><div><h4 class="text-xl font-bold text-navy mb-2">Website Alignment</h4><p class="text-gray-600">Where applicable, website content and local information are aligned.</p></div></div>
+                <div class="flex gap-6 bg-cloud p-6 rounded-xl shadow-sm"><div class="w-12 h-12 rounded-full bg-brand text-white font-bold flex items-center justify-center flex-shrink-0 text-xl shadow-md">4</div><div><h4 class="text-xl font-bold text-navy mb-2">Google Presence</h4><p class="text-gray-600">Google Business Profile can be connected to the wider local SEO strategy.</p></div></div>
+                <div class="flex gap-6 bg-cloud p-6 rounded-xl shadow-sm"><div class="w-12 h-12 rounded-full bg-brand text-white font-bold flex items-center justify-center flex-shrink-0 text-xl shadow-md">5</div><div><h4 class="text-xl font-bold text-navy mb-2">Ongoing Improvement</h4><p class="text-gray-600">Local visibility requires consistent information and ongoing digital maintenance.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-navy text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Benefits of Local SEO</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="flex items-start gap-4"><svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><p class="font-medium text-lg">Stronger local relevance</p></div>
+                <div class="flex items-start gap-4"><svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><p class="font-medium text-lg">Clearer service and location information</p></div>
+                <div class="flex items-start gap-4"><svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><p class="font-medium text-lg">Better alignment between website and Google presence</p></div>
+                <div class="flex items-start gap-4"><svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><p class="font-medium text-lg">Increased opportunity to be discovered in relevant local searches</p></div>
+                <div class="flex items-start gap-4"><svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><p class="font-medium text-lg">More consistent information across digital touchpoints</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-cloud">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold text-navy text-center mb-12">FAQ — Local SEO</h2>
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100" x-data="{ selected: 1 }">
+                <div class="faq-item"><button class="faq-question w-full text-left px-6 py-5 flex justify-between" @click="selected !== 1 ? selected = 1 : selected = null"><span class="font-bold text-navy pr-4">1. What is Local SEO?</span><svg class="w-5 h-5 text-brand" :class="{'rotate-180': selected === 1}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-5 text-gray-600" x-show="selected === 1"><p>Local SEO focuses on helping search engines understand where a business operates and which local services it provides.</p></div></div>
+                <div class="faq-item"><button class="faq-question w-full text-left px-6 py-5 flex justify-between" @click="selected !== 2 ? selected = 2 : selected = null"><span class="font-bold text-navy pr-4">2. Is Local SEO only for businesses with a physical shop?</span><svg class="w-5 h-5 text-brand" :class="{'rotate-180': selected === 2}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-5 text-gray-600" x-show="selected === 2" x-cloak><p>No. Service-area businesses may also benefit when local targeting accurately reflects how the business operates.</p></div></div>
+                <div class="faq-item"><button class="faq-question w-full text-left px-6 py-5 flex justify-between" @click="selected !== 3 ? selected = 3 : selected = null"><span class="font-bold text-navy pr-4">3. How quickly does Local SEO work?</span><svg class="w-5 h-5 text-brand" :class="{'rotate-180': selected === 3}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-5 text-gray-600" x-show="selected === 3" x-cloak><p>Results vary by market, competition, website history and other factors. Conexxus does not guarantee specific rankings or timelines.</p></div></div>
+                <div class="faq-item"><button class="faq-question w-full text-left px-6 py-5 flex justify-between" @click="selected !== 4 ? selected = 4 : selected = null"><span class="font-bold text-navy pr-4">4. Does Google Business Profile help Local SEO?</span><svg class="w-5 h-5 text-brand" :class="{'rotate-180': selected === 4}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-5 text-gray-600" x-show="selected === 4" x-cloak><p>Google Business Profile is an important part of local digital visibility and can complement a wider Local SEO strategy.</p></div></div>
+                <div class="faq-item"><button class="faq-question w-full text-left px-6 py-5 flex justify-between" @click="selected !== 5 ? selected = 5 : selected = null"><span class="font-bold text-navy pr-4">5. Can Local SEO work with a new website?</span><svg class="w-5 h-5 text-brand" :class="{'rotate-180': selected === 5}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-5 text-gray-600" x-show="selected === 5" x-cloak><p>Yes. Local SEO principles can be incorporated into the structure of a new website.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand text-white text-center">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-6">Discuss Your Local Visibility</h2>
+            <a href="https://wa.me/447341462757" class="btn-whatsapp bg-white text-brand hover:bg-cloud border-none text-lg px-10 py-4 shadow-xl">Discuss Local SEO on WhatsApp</a>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="site-footer bg-graphite text-gray-400 pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <img src="../06-imagens/Conexxus-digital-marketing-logo-transparent.png" alt="Conexxus Logo" class="h-12 w-auto">
+                    <p class="text-champagne_gold font-semibold italic">Connecting businesses with people.</p>
+                    <p class="text-sm leading-relaxed mt-4">
+                        Digital Marketing Agency<br>
+                        Swindon, Wiltshire, United Kingdom
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Links</h4>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="/index.html" class="hover:text-white transition-colors">Home</a>
+                        <a href="/servicos.html" class="hover:text-white transition-colors">Services</a>
+                        <a href="/sobre.html" class="hover:text-white transition-colors">About</a>
+                        <a href="/portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                        <a href="/blog.html" class="hover:text-white transition-colors">Blog</a>
+                        <a href="/index.html#faq" class="hover:text-white transition-colors">FAQ</a>
+                        <a href="/contato.html" class="hover:text-white transition-colors">Contact</a>
+                        <a href="/privacidade.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>07341 462757</li>
+                        <li><a href="https://wa.me/447341462757" target="_blank" class="hover:text-[#25D366] transition-colors flex items-center gap-2"><svg class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> WhatsApp</a></li>
+                        <li><a href="https://instagram.com/conexxus.co.uk" target="_blank" class="hover:text-[#E1306C] transition-colors flex items-center gap-2"><svg class="w-5 h-5 text-[#E1306C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram @conexxus.co.uk</a></li>
+                        <li><a href="mailto:hello@conexxus.co.uk" class="hover:text-[#00A8E8] transition-colors flex items-center gap-2"><svg class="w-5 h-5 text-[#00A8E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> hello@conexxus.co.uk</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Conexxus Digital Marketing. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="/privacidade.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/termos.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-[9999]">
+        <a href="https://wa.me/447341462757" target="_blank" class="relative flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-green-600 transition-colors" title="Talk on WhatsApp">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping"></span>
+            <svg class="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        </a>
+    </div>
+
+<!-- Google Translate Script -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,pt,es',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function translateLanguage(lang) {
+            var selectField = document.querySelector("select.goog-te-combo");
+            if (selectField) {
+                selectField.value = lang;
+                selectField.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- End Google Translate Script -->
+
+</body>
+</html>

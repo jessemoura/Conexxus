@@ -443,6 +443,15 @@ a {
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
 }
 
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 1.5rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+  }
+}
+
 /* --- Animations --- */
 @keyframes fadeInUp {
   from {

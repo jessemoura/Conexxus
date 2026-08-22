@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Business Profile | Conexxus Digital Marketing</title>
+
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
     <link rel="icon" type="image/png" href="/06-imagens/favicon.png">
 
     <meta name="description" content="Strategic support for Google Business Profile to help local businesses maintain accurate, professional and useful information on Google.">
@@ -107,7 +111,7 @@
 
     <section class="pt-40 pb-16 relative overflow-hidden">
         <div class="absolute inset-0 z-0 bg-navy">
-            <img src="..//06-imagens/conexxus-google-business-profile-services.webp" alt="Google Business Profile" class="w-full h-full object-cover mix-blend-overlay opacity-30">
+            <img loading="lazy" decoding="async" src="..//06-imagens/conexxus-google-business-profile-services.webp" alt="Google Business Profile" class="w-full h-full object-cover mix-blend-overlay opacity-30">
             <div class="absolute inset-0 bg-gradient-to-r from-navy to-transparent"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10 text-white">
@@ -249,13 +253,7 @@
     <!-- Google Translate Script -->
     <div id="google_translate_element" style="display:none;"></div>
     <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,pt,es',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
+        function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"en,pt,es",autoDisplay:!1},"google_translate_element")}
 
         function translateLanguage(lang) {
             var selectField = document.querySelector("select.goog-te-combo");

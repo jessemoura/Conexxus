@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Conexxus Digital Marketing</title>
+
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
     <link rel="icon" type="image/png" href="/06-imagens/favicon.png">
 
 
@@ -196,13 +200,7 @@
     <!-- Google Translate Script -->
     <div id="google_translate_element" style="display:none;"></div>
     <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,pt,es',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
+        function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"en,pt,es",autoDisplay:!1},"google_translate_element")}
 
         function translateLanguage(lang) {
             var selectField = document.querySelector("select.goog-te-combo");

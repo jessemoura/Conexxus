@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Conexxus Digital Marketing</title>
+
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
     <link rel="icon" type="image/png" href="/06-imagens/favicon.png">
 
     <meta name="description" content="Contact Conexxus Digital Marketing in Swindon.">
@@ -177,7 +181,7 @@
                 </div>
 
                 <div class="lg:w-1/2">
-                    <img src="/06-imagens/conexxus-small-business-whatsapp-support.webp" alt="WhatsApp Support" class="w-full rounded-2xl shadow-xl object-cover h-[600px]">
+                    <img loading="lazy" decoding="async" src="/06-imagens/conexxus-small-business-whatsapp-support.webp" alt="WhatsApp Support" class="w-full rounded-2xl shadow-xl object-cover h-[600px]">
                 </div>
             </div>
         </div>
@@ -247,13 +251,7 @@
     <!-- Google Translate Script -->
     <div id="google_translate_element" style="display:none;"></div>
     <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,pt,es',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
+        function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"en,pt,es",autoDisplay:!1},"google_translate_element")}
 
         function translateLanguage(lang) {
             var selectField = document.querySelector("select.goog-te-combo");

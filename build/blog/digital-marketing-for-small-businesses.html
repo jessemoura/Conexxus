@@ -7,7 +7,7 @@
 <title>Digital Marketing for Small Businesses | CONEXXUS</title>
 <meta name="description" content="A practical guide to digital marketing for small businesses in Swindon. Learn how to combine website design, SEO, and local visibility to win more customers."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses.html"/>
+<link rel="canonical" href="https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses">
 
 <!-- Favicons & Mobile Icons -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_GB"/>
 <meta property="og:title" content="Digital Marketing for Small Businesses | CONEXXUS"/>
 <meta property="og:description" content="A practical guide to digital marketing for small businesses in Swindon. Learn how to combine website design, SEO, and local visibility to win more customers."/>
-<meta property="og:url" content="https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses.html"/>
+<meta property="og:url" content="https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses">
 <meta property="og:image" content="https://www.conexxus.co.uk/06-imagens/conexxus-uk-social-preview.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -52,7 +52,7 @@
   "publisher": {
     "@id": "https://www.conexxus.co.uk/#organization"
   },
-  "mainEntityOfPage": "https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses.html"
+  "mainEntityOfPage": "https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses"
 }
 </script>
 <script type="application/ld+json">
@@ -70,13 +70,13 @@
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "https://www.conexxus.co.uk/blog.html"
+      "item": "https://www.conexxus.co.uk/blog"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Digital Marketing for Small Businesses | CONEXXUS",
-      "item": "https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses.html"
+      "item": "https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses"
     }
   ]
 }
@@ -129,23 +129,23 @@
 </a>
 <!-- Desktop Menu -->
 <nav class="hidden lg:flex items-center space-x-8 font-semibold flex-wrap breadcrumbs">
-<a class="hover:text-champagne_gold transition-colors" href="../index.html">Home</a>
+<a class="hover:text-champagne_gold transition-colors" href="/">Home</a>
 <!-- Dropdown Services -->
 <div @click.outside="open = false" @mouseenter="open = true" @mouseleave="open = false" class="relative" x-data="{ open: false }">
-<a class="flex items-center gap-1 hover:text-champagne_gold transition-colors" href="../servicos.html">
+<a class="flex items-center gap-1 hover:text-champagne_gold transition-colors" href="/services">
                         Services
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </a>
 <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-3 text-graphite border border-gray-100" style="display: none;" x-show="open" x-transition.opacity="">
-<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="../servicos/criacao-de-websites.html">Website Design</a>
-<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="../servicos/seo-local.html">Local SEO</a>
-<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="../servicos/google-business-profile.html">Google Business Profile</a>
+<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="/services/web-design">Website Design</a>
+<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="/services/local-seo">Local SEO</a>
+<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="/services/google-business-profile">Google Business Profile</a>
 </div>
 </div>
-<a class="hover:text-champagne_gold transition-colors" href="../sobre.html">About</a>
-<a class="hover:text-champagne_gold transition-colors" href="../portfolio.html">Portfolio</a>
-<a class="text-champagne_gold transition-colors" href="../blog.html">Blog</a>
-<a class="hover:text-champagne_gold transition-colors" href="../contato.html">Contact</a>
+<a class="hover:text-champagne_gold transition-colors" href="/about">About</a>
+<a class="hover:text-champagne_gold transition-colors" href="/portfolio">Portfolio</a>
+<a class="text-champagne_gold transition-colors" href="/blog">Blog</a>
+<a class="hover:text-champagne_gold transition-colors" href="/contact">Contact</a>
 </nav>
 <!-- CTA Desktop & Socials -->
 <div class="hidden lg:flex items-center gap-5">
@@ -172,12 +172,12 @@
 <!-- Mobile Menu -->
 <div class="lg:hidden bg-navy w-full min-h-screen border-t border-blue-900/50 absolute top-full left-0 py-4 shadow-xl" x-show="mobileMenuOpen" x-transition.origin.top="">
 <nav class="flex flex-col space-y-4 px-6 text-lg font-medium">
-<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="../index.html">Home</a>
-<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="../servicos.html">Services</a>
-<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="../sobre.html">About</a>
-<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="../portfolio.html">Portfolio</a>
-<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="text-champagne_gold" href="../blog.html">Blog</a>
-<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="../contato.html">Contact</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/">Home</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/services">Services</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/about">About</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/portfolio">Portfolio</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="text-champagne_gold" href="/blog">Blog</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/contact">Contact</a>
 <div class="pt-4 mt-2 border-t border-blue-900/50">
 <a class="btn-primary w-full justify-center" href="https://wa.me/447341462757?text=Hi%21%20I%20found%20you%20through%20your%20website%20and%20I%E2%80%99d%20like%20to%20learn%20more%20about%20how%20you%20can%20help%20my%20business%20grow%20its%20digital%20presence.%20Can%20we%20chat%3F">Talk to Us on WhatsApp</a>
 </div>
@@ -188,7 +188,7 @@
 <div class="bg-navy pt-40 pb-8">
 <div class="container mx-auto px-6">
 <nav class="text-sm text-blue-200 breadcrumbs flex-wrap breadcrumbs">
-<a href="../index.html">Home</a> &gt; <a href="../blog.html">Blog</a> &gt; <span class="text-white">Digital Marketing for Small Businesses</span>
+<a href="/">Home</a> &gt; <a href="/blog">Blog</a> &gt; <span class="text-white">Digital Marketing for Small Businesses</span>
 </nav>
 </div>
 </div>
@@ -240,19 +240,19 @@
 <p>A professional small business website should clearly communicate who you are, what you offer and how customers can contact you.</p>
 <p>It should also work properly across desktop, tablet and mobile devices.</p>
 <p>Good website design is not only about appearance. Structure, usability, speed, content and search visibility all contribute to the experience.</p>
-<p>For businesses looking for professional <a class="text-brand font-semibold hover:underline" href="../servicos/criacao-de-websites.html">website design in Swindon</a>, having a website built around both the customer journey and search visibility can create a stronger foundation for the rest of the digital strategy.</p>
+<p>For businesses looking for professional <a class="text-brand font-semibold hover:underline" href="/services/web-design">website design in Swindon</a>, having a website built around both the customer journey and search visibility can create a stronger foundation for the rest of the digital strategy.</p>
 <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Local SEO Helps Customers Find Your Business</h2>
 <p>For businesses serving a particular town, city or region, local visibility can be particularly important.</p>
 <p>Local SEO focuses on helping search engines understand what your business offers and where it operates.</p>
 <p>For example, someone searching for a service in Swindon may use Google to find businesses located in or serving the area.</p>
 <p>A well-structured website, relevant local content and an optimised business presence can help search engines better understand the relationship between your services and your location.</p>
 <p>Local SEO is not about guaranteeing a particular Google position. It is about building stronger signals that make your business more relevant and easier to understand in local searches.</p>
-<p>Learn more about <a class="text-brand font-semibold hover:underline" href="../servicos/seo-local.html">Local SEO in Swindon</a>.</p>
+<p>Learn more about <a class="text-brand font-semibold hover:underline" href="/services/local-seo">Local SEO in Swindon</a>.</p>
 <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Google Business Profile Connects Search With Your Business</h2>
 <p>Google Business Profile can play an important role in local digital visibility.</p>
 <p>It gives businesses an opportunity to present important information directly within Google Search and Maps, depending on eligibility and Google's platform requirements.</p>
 <p>Business information should be accurate and consistent. This can include details such as services, contact information, business category, opening hours and other relevant information.</p>
-<p>A well-maintained Google Business Profile can complement your website and Local SEO strategy, helping create a more consistent presence across Google. Discover our <a class="text-brand font-semibold hover:underline" href="../servicos/google-business-profile.html">Google Business Profile services</a>.</p>
+<p>A well-maintained Google Business Profile can complement your website and Local SEO strategy, helping create a more consistent presence across Google. Discover our <a class="text-brand font-semibold hover:underline" href="/services/google-business-profile">Google Business Profile services</a>.</p>
 <h2 class="text-3xl font-bold text-navy mt-12 mb-6">Branding Creates Recognition and Trust</h2>
 <p>Your brand is more than a logo.</p>
 <p>It includes the colours, typography, visual identity, tone of voice and overall experience people associate with your business.</p>
@@ -339,14 +339,14 @@
 <div>
 <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Links</h4>
 <div class="grid grid-cols-2 gap-3 text-sm">
-<a class="hover:text-white transition-colors" href="/index.html">Home</a>
-<a class="hover:text-white transition-colors" href="/servicos.html">Services</a>
-<a class="hover:text-white transition-colors" href="/sobre.html">About</a>
-<a class="hover:text-white transition-colors" href="/portfolio.html">Portfolio</a>
-<a class="hover:text-white transition-colors" href="/blog.html">Blog</a>
-<a class="hover:text-white transition-colors" href="/index.html#faq">FAQ</a>
-<a class="hover:text-white transition-colors" href="/contato.html">Contact</a>
-<a class="hover:text-white transition-colors" href="/privacidade.html">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="/">Home</a>
+<a class="hover:text-white transition-colors" href="/services">Services</a>
+<a class="hover:text-white transition-colors" href="/about">About</a>
+<a class="hover:text-white transition-colors" href="/portfolio">Portfolio</a>
+<a class="hover:text-white transition-colors" href="/blog">Blog</a>
+<a class="hover:text-white transition-colors" href="/#faq">FAQ</a>
+<a class="hover:text-white transition-colors" href="/contact">Contact</a>
+<a class="hover:text-white transition-colors" href="/privacy">Privacy Policy</a>
 </div>
 </div>
 <!-- Contact -->
@@ -364,7 +364,7 @@
 <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
 <p>© 2026 CONEXXUS. All rights reserved. <span class="hidden md:inline mx-1">|</span><br class="md:hidden"/> Digital Marketing Agency in Swindon</p>
 <div class="flex gap-4">
-<a class="hover:text-white transition-colors" href="/privacidade.html">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="/privacy">Privacy Policy</a>
 </div>
 </div>
 </div>

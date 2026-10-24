@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 4. Contact Clicks
-    if (href.includes('contato.html') || href.endsWith('/contato')) {
+    if (href.includes('contact') || href.includes('contato')) {
       sendAnalyticsEvent('contact_click', {
         button_name: buttonName,
         destination_url: href
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 5. Portfolio Project Clicks
-    if (link.closest('.portfolio-premium-card') || href.includes('portfolio.html') || href.includes('nicolasfuroni') || href.includes('oxfordbarber') || href.includes('lumoracleaning') || href.includes('crafix') || href.includes('littlepet')) {
+    if (link.closest('.portfolio-card') || link.closest('.portfolio-premium-card') || href.includes('portfolio') || href.includes('nicolasfuroni') || href.includes('oxfordbarber') || href.includes('lumoracleaning') || href.includes('crafix') || href.includes('littlepet')) {
       sendAnalyticsEvent('portfolio_click', {
         button_name: buttonName,
         destination_url: href
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 6. Service Pages Clicks
-    if (href.includes('servicos') || href.includes('criacao-de-websites') || href.includes('seo-local') || href.includes('google-business-profile')) {
+    if (href.includes('services') || href.includes('servicos') || href.includes('web-design') || href.includes('criacao-de-websites') || href.includes('local-seo') || href.includes('seo-local') || href.includes('google-business-profile')) {
       sendAnalyticsEvent('service_click', {
         button_name: buttonName,
         destination_url: href

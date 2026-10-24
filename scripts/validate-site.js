@@ -56,10 +56,12 @@ for (const file of htmlFiles) {
     errors.push('Missing or empty <meta name="description">');
   }
 
-  // 4. Check canonical
+  // 4. Check canonical (must be valid, https, and NEVER contain .html)
   const canonMatch = content.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']*)["']/i);
   if (!canonMatch || !canonMatch[1].startsWith('https://www.conexxus.co.uk')) {
     errors.push('Missing or invalid <link rel="canonical">');
+  } else if (canonMatch[1].includes('.html')) {
+    errors.push(`Canonical MUST NOT contain .html: found "${canonMatch[1]}"`);
   }
 
   // 5. Check Favicon references
@@ -73,7 +75,14 @@ for (const file of htmlFiles) {
     errors.push('Missing or invalid og:image (must point to conexxus-uk-social-preview.png or /06-imagens/)');
   }
   if (!content.includes('property="og:title"')) errors.push('Missing og:title');
-  if (!content.includes('property="og:url"')) errors.push('Missing og:url');
+  
+  const ogUrlMatch = content.match(/<meta[^>]+property=["']og:url["'][^>]+content=["']([^"']*)["']/i);
+  if (!ogUrlMatch) {
+    errors.push('Missing og:url');
+  } else if (ogUrlMatch[1].includes('.html')) {
+    errors.push(`og:url MUST NOT contain .html: found "${ogUrlMatch[1]}"`);
+  }
+
   if (!content.includes('name="twitter:card"')) errors.push('Missing twitter:card');
 
   // 7. Check official logo
@@ -88,7 +97,14 @@ for (const file of htmlFiles) {
   } else {
     jsonLdBlocks.forEach((block, idx) => {
       try {
-        JSON.parse(block[1]);
+        const parsed = JSON.parse(block[1]);
+        const blockStr = JSON.stringify(parsed);
+        if (blockStr.includes('.html')) {
+          errors.push(`JSON-LD block #${idx + 1} contains .html in URL or property`);
+        }
+        if (blockStr.includes('/sobre') || blockStr.includes('/servicos') || blockStr.includes('/contato') || blockStr.includes('/privacidade')) {
+          errors.push(`JSON-LD block #${idx + 1} contains legacy Portuguese path`);
+        }
       } catch (err) {
         errors.push(`Invalid JSON-LD syntax in block #${idx + 1}: ${err.message}`);
       }
@@ -100,7 +116,22 @@ for (const file of htmlFiles) {
     errors.push('Missing core analytics /assets/js/script.js');
   }
 
-  // 10. Check Mojibake
+  // 10. Check Internal Links for .html
+  const hrefMatches = [...content.matchAll(/href=["']([^"']+)["']/gi)];
+  for (const match of hrefMatches) {
+    const target = match[1];
+    // Check if internal link
+    const isInternal = target.startsWith('/') || target.startsWith('..') || (!target.startsWith('http') && !target.startsWith('mailto:') && !target.startsWith('tel:') && !target.startsWith('#') && !target.startsWith('javascript:'));
+    const isSameDomain = target.startsWith('https://www.conexxus.co.uk') || target.startsWith('http://www.conexxus.co.uk') || target.startsWith('https://conexxus.co.uk');
+    
+    if (isInternal || isSameDomain) {
+      if (target.includes('.html')) {
+        errors.push(`Internal link points to .html: "${target}"`);
+      }
+    }
+  }
+
+  // 11. Check Mojibake
   if (/Ã[¡-ÿ]|Ãƒ|Ã‚|â€/.test(content)) {
     warnings.push('Possible Mojibake / encoding corruption detected');
   }
@@ -118,7 +149,7 @@ for (const file of htmlFiles) {
   totalWarnings += warnings.length;
 }
 
-// 11. Check Required Files Exist
+// 12. Check Required Files Exist
 const requiredFiles = [
   'favicon.ico',
   'favicon-16x16.png',
@@ -145,6 +176,35 @@ for (const req of requiredFiles) {
     console.log(`✗ [MISSING] ${req}`);
     totalErrors++;
   }
+}
+
+// 13. Audit sitemap.xml for Clean URLs
+console.log('\n--- Checking Sitemap for Clean URLs ---');
+const sitemapPath = path.join(buildDir, 'sitemap.xml');
+if (fs.existsSync(sitemapPath)) {
+  const sitemapXml = fs.readFileSync(sitemapPath, 'utf8');
+  const locMatches = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/gi)].map(m => m[1]);
+  console.log(`Sitemap contains ${locMatches.length} URLs.`);
+  
+  if (locMatches.length === 0) {
+    console.log('✗ [ERROR] Sitemap is empty!');
+    totalErrors++;
+  }
+
+  for (const loc of locMatches) {
+    if (loc.includes('.html')) {
+      console.log(`✗ [ERROR] Sitemap contains .html URL: ${loc}`);
+      totalErrors++;
+    } else if (loc !== 'https://www.conexxus.co.uk/' && loc.endsWith('/')) {
+      console.log(`✗ [ERROR] Sitemap contains trailing slash URL: ${loc}`);
+      totalErrors++;
+    } else {
+      console.log(`✓ [CLEAN] ${loc}`);
+    }
+  }
+} else {
+  console.log('✗ [MISSING] sitemap.xml');
+  totalErrors++;
 }
 
 console.log('\n====================================================');

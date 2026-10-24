@@ -15,32 +15,38 @@ Sitemap: {base_url}/sitemap.xml
 with open(os.path.join(build_dir, 'robots.txt'), 'w', encoding='utf-8') as f:
     f.write(robots_content)
 
-# 2. Create sitemap.xml
-html_files = glob.glob(os.path.join(build_dir, '**/*.html'), recursive=True)
+# 2. Create sitemap.xml with Clean Extensionless URLs
 today = datetime.now().strftime('%Y-%m-%d')
 
+CLEAN_PAGES = [
+    # Homepage
+    ("", "1.0", "weekly"),
+    # Core Services
+    ("services", "0.9", "monthly"),
+    ("services/web-design", "0.9", "monthly"),
+    ("services/local-seo", "0.9", "monthly"),
+    ("services/google-business-profile", "0.9", "monthly"),
+    # Institutional
+    ("about", "0.8", "monthly"),
+    ("portfolio", "0.8", "monthly"),
+    ("blog", "0.8", "monthly"),
+    ("contact", "0.8", "monthly"),
+    ("privacy", "0.8", "monthly"),
+    # Blog Posts
+    ("blog/how-much-does-a-website-cost-in-swindon", "0.7", "monthly"),
+    ("blog/website-design-for-small-businesses-in-swindon", "0.7", "monthly"),
+    ("blog/local-seo-for-swindon-businesses", "0.7", "monthly"),
+    ("blog/improve-google-business-profile-swindon", "0.7", "monthly"),
+    ("blog/digital-marketing-for-small-businesses", "0.7", "monthly"),
+    ("blog/social-media-for-small-businesses", "0.7", "monthly"),
+    ("blog/why-quality-website-hosting-matters", "0.7", "monthly"),
+]
+
 sitemap_urls = []
-for file in sorted(html_files):
-    rel_path = os.path.relpath(file, build_dir).replace('\\', '/')
-    if rel_path == "404.html":
-        continue
-    
-    # Priority & frequency rules
-    priority = "0.8"
-    changefreq = "monthly"
-    if rel_path == "index.html":
-        rel_path = ""
-        priority = "1.0"
-        changefreq = "weekly"
-    elif "servicos/" in rel_path or rel_path == "servicos.html":
-        priority = "0.9"
-        changefreq = "monthly"
-    elif "blog/" in rel_path:
-        priority = "0.7"
-        changefreq = "monthly"
-        
+for rel_path, priority, changefreq in CLEAN_PAGES:
+    url_loc = f"{base_url}/{rel_path}" if rel_path else f"{base_url}/"
     url_tag = f"""  <url>
-    <loc>{base_url}/{rel_path}</loc>
+    <loc>{url_loc}</loc>
     <lastmod>{today}</lastmod>
     <changefreq>{changefreq}</changefreq>
     <priority>{priority}</priority>
@@ -56,4 +62,5 @@ sitemap_content = f"""<?xml version="1.0" encoding="UTF-8"?>
 with open(os.path.join(build_dir, 'sitemap.xml'), 'w', encoding='utf-8') as f:
     f.write(sitemap_content)
 
-print(f"Generated robots.txt and sitemap.xml with {len(sitemap_urls)} URLs.")
+print(f"Generated robots.txt and sitemap.xml with {len(sitemap_urls)} clean URLs.")
+

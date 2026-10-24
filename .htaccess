@@ -1,26 +1,98 @@
 # CONEXXUS UK — Production Apache Configuration
 RewriteEngine On
 
-# 1. Enforce HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# 2. Block access to hidden, private, or configuration files
+# 1. Block access to hidden, private, or configuration files
 <FilesMatch "^\.|\.(py|yaml|yml|md|json|log|sh|bak|sql)$">
     Require all denied
 </FilesMatch>
 
-# 3. Prevent directory listing
-Options -Indexes
+# 2. Options: disable directory listing and content negotiation
+Options -Indexes -MultiViews
 
-# 4. Error 404
+# 3. Canonical Domain & HTTPS Enforcement (www.conexxus.co.uk)
+RewriteCond %{HTTP_HOST} ^(?:www\.)?conexxus\.co\.uk$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^conexxus\.co\.uk$ [NC]
+RewriteRule ^(.*)$ https://www.conexxus.co.uk/$1 [R=301,L]
+
+# 4. Redirect /index.html and /index -> /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/ [R=301,L]
+
+# 5. Trailing Slash Removal (sem barra final, except root /)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+([^?]+?)/+[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/%1 [R=301,L]
+
+# 6. Legacy 301 Redirects (Portuguese -> Clean English)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+servicos/criacao-de-websites(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/services/web-design [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+servicos/seo-local(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/services/local-seo [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+servicos/google-business-profile(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/services/google-business-profile [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+services/criacao-de-websites(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/services/web-design [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+services/seo-local(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/services/local-seo [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+sobre(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/about [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+servicos(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/services [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+contato(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/contact [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+privacidade(?:\.html)?[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/privacy [R=301,L]
+
+# 7. Generic .html Stripping: 301 redirect any remaining .html request to clean URL
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+([^?]+)\.html[\s?] [NC]
+RewriteRule ^ https://www.conexxus.co.uk/%1 [R=301,L]
+
+# 8. Error 404 Handler
 ErrorDocument 404 /404.html
 
-# 5. Route non-build requests to /build/
+# 9. Internal Rewrites to serve files from /build/ without exposing .html
+# Root homepage
+RewriteRule ^$ /build/index.html [L]
+
+# Clean institutional and core pages
+RewriteRule ^about$ /build/about.html [L]
+RewriteRule ^services$ /build/services.html [L]
+RewriteRule ^portfolio$ /build/portfolio.html [L]
+RewriteRule ^blog$ /build/blog.html [L]
+RewriteRule ^contact$ /build/contact.html [L]
+RewriteRule ^privacy$ /build/privacy.html [L]
+RewriteRule ^404$ /build/404.html [L]
+
+# Clean service subpages
+RewriteRule ^services/web-design$ /build/services/web-design.html [L]
+RewriteRule ^services/local-seo$ /build/services/local-seo.html [L]
+RewriteRule ^services/google-business-profile$ /build/services/google-business-profile.html [L]
+
+# Clean blog articles (explicit mappings)
+RewriteRule ^blog/how-much-does-a-website-cost-in-swindon$ /build/blog/how-much-does-a-website-cost-in-swindon.html [L]
+RewriteRule ^blog/website-design-for-small-businesses-in-swindon$ /build/blog/website-design-for-small-businesses-in-swindon.html [L]
+RewriteRule ^blog/local-seo-for-swindon-businesses$ /build/blog/local-seo-for-swindon-businesses.html [L]
+RewriteRule ^blog/improve-google-business-profile-swindon$ /build/blog/improve-google-business-profile-swindon.html [L]
+RewriteRule ^blog/digital-marketing-for-small-businesses$ /build/blog/digital-marketing-for-small-businesses.html [L]
+RewriteRule ^blog/social-media-for-small-businesses$ /build/blog/social-media-for-small-businesses.html [L]
+RewriteRule ^blog/why-quality-website-hosting-matters$ /build/blog/why-quality-website-hosting-matters.html [L]
+
+# Dynamic blog post handler
+RewriteRule ^blog/([^/]+)$ /build/blog/$1.html [L]
+
+# 10. Route all static assets, sitemap.xml, robots.txt, etc. to /build/
 RewriteCond %{REQUEST_URI} !^/build/
 RewriteRule ^(.*)$ /build/$1 [L]
 
-# 6. Security Headers
+# 11. Security Headers
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"

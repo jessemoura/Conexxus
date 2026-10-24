@@ -40,6 +40,12 @@ CLEAN_PAGES = [
     ("blog/digital-marketing-for-small-businesses", "0.7", "monthly"),
     ("blog/social-media-for-small-businesses", "0.7", "monthly"),
     ("blog/why-quality-website-hosting-matters", "0.7", "monthly"),
+    ("blog/signs-your-business-website-needs-a-redesign", "0.7", "monthly"),
+    ("blog/seo-vs-google-ads-small-business-uk", "0.7", "monthly"),
+    ("blog/how-long-does-local-seo-take", "0.7", "monthly"),
+    ("blog/mobile-website-speed-local-businesses", "0.7", "monthly"),
+    ("blog/get-more-local-customers-through-google", "0.7", "monthly"),
+    ("blog/why-small-business-needs-professional-website", "0.7", "monthly"),
 ]
 
 sitemap_urls = []

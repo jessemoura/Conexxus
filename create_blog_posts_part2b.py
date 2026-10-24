@@ -1,0 +1,295 @@
+# -*- coding: utf-8 -*-
+"""
+Generator for the 6 new SEO blog articles for CONEXXUS UK (Part 2B).
+"""
+
+import os
+import re
+
+BLOG_DIR = r"build\blog"
+BASE_URL = "https://www.conexxus.co.uk"
+
+def create_article_html(slug, title, meta_desc, headline, category, image_filename, image_alt, date_published, article_body_html, faq_items):
+    faq_html = "\n".join([
+        f"""<div>
+<h3 class="text-xl font-bold text-navy mb-2">{q}</h3>
+<p class="text-gray-600">{a}</p>
+</div>""" for q, a in faq_items
+    ])
+
+    return f"""<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{title}</title>
+<meta name="description" content="{meta_desc}"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="{BASE_URL}/blog/{slug}">
+
+<!-- Favicons & Mobile Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="theme-color" content="#003A70"/>
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="CONEXXUS"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:title" content="{title}"/>
+<meta property="og:description" content="{meta_desc}"/>
+<meta property="og:url" content="{BASE_URL}/blog/{slug}">
+<meta property="og:image" content="{BASE_URL}/06-imagens/{image_filename}"/>
+<meta property="og:image:width" content="1600"/>
+<meta property="og:image:height" content="900"/>
+<meta property="og:image:alt" content="{image_alt}"/>
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="{title}"/>
+<meta name="twitter:description" content="{meta_desc}"/>
+<meta name="twitter:image" content="{BASE_URL}/06-imagens/{image_filename}"/>
+
+<!-- Structured Data / Schema -->
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{headline}",
+  "description": "{meta_desc}",
+  "image": "{BASE_URL}/06-imagens/{image_filename}",
+  "datePublished": "{date_published}",
+  "dateModified": "{date_published}",
+  "author": {{
+    "@type": "Organization",
+    "name": "CONEXXUS",
+    "url": "https://www.conexxus.co.uk/"
+  }},
+  "publisher": {{
+    "@id": "https://www.conexxus.co.uk/#organization"
+  }},
+  "mainEntityOfPage": "{BASE_URL}/blog/{slug}"
+}}
+</script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.conexxus.co.uk/"
+    }},
+    {{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.conexxus.co.uk/blog"
+    }},
+    {{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{headline}",
+      "item": "{BASE_URL}/blog/{slug}"
+    }}
+  ]
+}}
+</script>
+
+<!-- Preconnects & Google Fonts -->
+<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin=""/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin=""/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {{
+        theme: {{
+            extend: {{
+                colors: {{
+                    navy: '#003A70',
+                    brand: '#0066B3',
+                    champagne_gold: '#D6B66A',
+                    champagne_light: '#E8D39B',
+                    cloud: '#F4F7FA',
+                    graphite: '#181A1B',
+                }},
+                fontFamily: {{
+                    sans: ['Inter', 'sans-serif'],
+                }}
+            }}
+        }}
+    }}
+</script>
+
+<!-- Custom CSS & Core Analytics -->
+<link rel="stylesheet" href="/assets/css/style.css"/>
+<script defer="" src="/assets/js/script.js"></script>
+
+<!-- Alpine Plugins & Alpine.js -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-graphite bg-white antialiased">
+<!-- HEADER -->
+<header :class="{{ 'bg-navy shadow-lg py-2': mobileMenuOpen || isScrolled, 'bg-transparent py-2 lg:py-4': !mobileMenuOpen &amp;&amp; !isScrolled }}" @scroll.window="isScrolled = (window.scrollY &gt; 20)" class="site-header fixed w-full top-0 z-[999] transition-all duration-300 text-white" x-data="{{ mobileMenuOpen: false, isScrolled: false }}">
+<div class="container mx-auto px-6 flex items-center justify-between">
+<!-- Logo -->
+<a class="flex-shrink-0" href="/">
+<img :class="isScrolled ? 'h-9 lg:h-11' : 'h-10 lg:h-12'" alt="CONEXXUS — Digital Marketing Agency in Swindon" class="w-auto transition-all duration-300" src="/06-imagens/conexxus-uk-logo-transparent.png"/>
+</a>
+<!-- Desktop Menu -->
+<nav class="hidden lg:flex items-center space-x-8 font-semibold flex-wrap breadcrumbs">
+<a class="hover:text-champagne_gold transition-colors" href="/">Home</a>
+<!-- Dropdown Services -->
+<div @click.outside="open = false" @mouseenter="open = true" @mouseleave="open = false" class="relative" x-data="{{ open: false }}">
+<a class="flex items-center gap-1 hover:text-champagne_gold transition-colors" href="/services">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-3 text-graphite border border-gray-100" style="display: none;" x-show="open" x-transition.opacity="">
+<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="/services/web-design">Website Design</a>
+<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="/services/local-seo">Local SEO</a>
+<a class="block px-5 py-2 hover:bg-cloud hover:text-brand transition-colors" href="/services/google-business-profile">Google Business Profile</a>
+</div>
+</div>
+<a class="hover:text-champagne_gold transition-colors" href="/about">About</a>
+<a class="hover:text-champagne_gold transition-colors" href="/portfolio">Portfolio</a>
+<a class="text-champagne_gold transition-colors" href="/blog">Blog</a>
+<a class="hover:text-champagne_gold transition-colors" href="/contact">Contact</a>
+</nav>
+<!-- CTA Desktop & Socials -->
+<div class="hidden lg:flex items-center gap-5">
+<div class="flex items-center gap-3">
+<a class="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white shadow-[0_0_12px_rgba(225,48,108,0.5)] hover:scale-110 transition-transform" href="https://instagram.com/conexxus.co.uk" target="_blank" title="Instagram">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+</a>
+<a class="flex items-center justify-center w-9 h-9 rounded-full bg-[#00A8E8] text-white shadow-[0_0_12px_rgba(0,168,232,0.5)] hover:scale-110 transition-transform" href="mailto:hello@conexxus.co.uk?subject=Website%20Inquiry&amp;body=Hi%21%20I%20found%20you%20through%20your%20website%20and%20I%E2%80%99d%20like%20to%20learn%20more%20about%20how%20you%20can%20help%20my%20business%20grow%20its%20digital%20presence.%20Can%20we%20chat%3F" title="Email">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="h-6 w-px bg-white/30 hidden lg:block"></div>
+<a class="btn-primary" href="https://wa.me/447341462757?text=Hi%21%20I%20found%20you%20through%20your%20website%20and%20I%E2%80%99d%20like%20to%20learn%20more%20about%20how%20you%20can%20help%20my%20business%20grow%20its%20digital%20presence.%20Can%20we%20chat%3F" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
+                    Talk to Us
+</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button @click="mobileMenuOpen = !mobileMenuOpen; document.body.classList.toggle('menu-open')" class="lg:hidden text-white focus:outline-none z-50">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="!mobileMenuOpen"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<svg class="w-8 h-8" fill="none" stroke="currentColor" style="display: none;" viewbox="0 0 24 24" x-show="mobileMenuOpen"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="lg:hidden bg-navy w-full min-h-screen border-t border-blue-900/50 absolute top-full left-0 py-4 shadow-xl" x-show="mobileMenuOpen" x-transition.origin.top="">
+<nav class="flex flex-col space-y-4 px-6 text-lg font-medium">
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/">Home</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/services">Services</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/about">About</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/portfolio">Portfolio</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="text-champagne_gold" href="/blog">Blog</a>
+<a @click="mobileMenuOpen = false; document.body.classList.remove('menu-open')" class="hover:text-champagne_gold" href="/contact">Contact</a>
+<div class="pt-4 mt-2 border-t border-blue-900/50">
+<a class="btn-primary w-full justify-center" href="https://wa.me/447341462757?text=Hi%21%20I%20found%20you%20through%20your%20website%20and%20I%E2%80%99d%20like%20to%20learn%20more%20about%20how%20you%20can%20help%20my%20business%20grow%20its%20digital%20presence.%20Can%20we%20chat%3F">Talk to Us on WhatsApp</a>
+</div>
+</nav>
+</div>
+</header>
+
+<!-- BREADCRUMBS -->
+<div class="bg-navy pt-40 pb-8">
+<div class="container mx-auto px-6">
+<nav class="text-sm text-blue-200 breadcrumbs flex-wrap">
+<a href="/">Home</a> &gt; <a href="/blog">Blog</a> &gt; <span class="text-white">{headline}</span>
+</nav>
+</div>
+</div>
+
+<!-- ARTICLE HEADER -->
+<section class="bg-navy text-white pb-16">
+<div class="container mx-auto px-6 max-w-4xl">
+<span class="text-xs font-bold text-champagne_gold uppercase tracking-wider block mb-3">{category}</span>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">{headline}</h1>
+<p class="text-xl text-blue-100 font-light leading-relaxed max-w-3xl">
+{meta_desc}
+</p>
+</div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="section-padding bg-white pt-8">
+<div class="container mx-auto px-6 max-w-4xl mb-12">
+<img alt="{image_alt}" class="w-full rounded-2xl shadow-xl object-cover aspect-video" decoding="async" loading="lazy" src="/06-imagens/{image_filename}"/>
+</div>
+
+<div class="container mx-auto px-6 max-w-3xl text-lg text-gray-700 space-y-6 leading-relaxed">
+{article_body_html}
+
+<hr class="my-16 border-gray-200"/>
+
+<h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+<div class="space-y-6">
+{faq_html}
+</div>
+
+</div>
+</article>
+
+<!-- FOOTER -->
+<footer class="site-footer bg-graphite text-gray-400 pt-16 pb-8 border-t border-gray-800">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+<!-- Brand -->
+<div class="space-y-4">
+<img alt="CONEXXUS — Digital Marketing Agency in Swindon" class="h-10 lg:h-11 w-auto" src="/06-imagens/conexxus-uk-logo-transparent.png"/>
+<p class="text-champagne_gold font-semibold italic">Connecting businesses with people.</p>
+<p class="text-sm leading-relaxed mt-4">
+    Digital Marketing Agency<br/>
+    Swindon, Wiltshire, United Kingdom
+</p>
+</div>
+<!-- Links -->
+<div>
+<h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Links</h4>
+<div class="grid grid-cols-2 gap-3 text-sm">
+<a class="hover:text-white transition-colors" href="/">Home</a>
+<a class="hover:text-white transition-colors" href="/services">Services</a>
+<a class="hover:text-white transition-colors" href="/about">About</a>
+<a class="hover:text-white transition-colors" href="/portfolio">Portfolio</a>
+<a class="hover:text-white transition-colors" href="/blog">Blog</a>
+<a class="hover:text-white transition-colors" href="/#faq">FAQ</a>
+<a class="hover:text-white transition-colors" href="/contact">Contact</a>
+<a class="hover:text-white transition-colors" href="/privacy">Privacy Policy</a>
+</div>
+</div>
+<!-- Contact -->
+<div>
+<h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact</h4>
+<ul class="space-y-3 text-sm">
+<li class="flex items-center gap-2"><svg class="w-5 h-5 text-champagne_gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> Mon - Fri, 09:00 - 18:00</li>
+<li><a class="hover:text-brand transition-colors" href="tel:07341462757">07341 462757</a></li>
+<li><a class="hover:text-[#25D366] transition-colors flex items-center gap-2" href="https://wa.me/447341462757?text=Hi%21%20I%20found%20you%20through%20your%20website%20and%20I%E2%80%99d%20like%20to%20learn%20more%20about%20how%20you%20can%20help%20my%20business%20grow%20its%20digital%20presence.%20Can%20we%20chat%3F" target="_blank"><svg class="w-5 h-5 text-[#25D366]" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg> WhatsApp</a></li>
+<li><a class="hover:text-[#E1306C] transition-colors flex items-center gap-2" href="https://instagram.com/conexxus.co.uk" target="_blank"><svg class="w-5 h-5 text-[#E1306C]" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg> Instagram @conexxus.co.uk</a></li>
+<li><a class="hover:text-[#00A8E8] transition-colors flex items-center gap-2" href="mailto:hello@conexxus.co.uk?subject=Website%20Inquiry&amp;body=Hi%21%20I%20found%20you%20through%20your%20website%20and%20I%E2%80%99d%20like%20to%20learn%20more%20about%20how%20you%20can%20help%20my%20business%20grow%20its%20digital%20presence.%20Can%20we%20chat%3F"><svg class="w-5 h-5 text-[#00A8E8]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> hello@conexxus.co.uk</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+<p>© 2026 CONEXXUS. All rights reserved. <span class="hidden md:inline mx-1">|</span><br class="md:hidden"/> Digital Marketing Agency in Swindon</p>
+<div class="flex gap-4">
+<a class="hover:text-white transition-colors" href="/privacy">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>"""

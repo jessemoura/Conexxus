@@ -19,6 +19,12 @@ const cleanPages = [
   'https://www.conexxus.co.uk/blog/digital-marketing-for-small-businesses',
   'https://www.conexxus.co.uk/blog/social-media-for-small-businesses',
   'https://www.conexxus.co.uk/blog/why-quality-website-hosting-matters',
+  'https://www.conexxus.co.uk/blog/signs-your-business-website-needs-a-redesign',
+  'https://www.conexxus.co.uk/blog/seo-vs-google-ads-small-business-uk',
+  'https://www.conexxus.co.uk/blog/how-long-does-local-seo-take',
+  'https://www.conexxus.co.uk/blog/mobile-website-speed-local-businesses',
+  'https://www.conexxus.co.uk/blog/get-more-local-customers-through-google',
+  'https://www.conexxus.co.uk/blog/why-small-business-needs-professional-website',
   'https://www.conexxus.co.uk/sitemap.xml',
   'https://www.conexxus.co.uk/robots.txt'
 ];
@@ -43,6 +49,12 @@ const legacyRedirects = [
   { from: 'https://www.conexxus.co.uk/blog/website-design-for-small-businesses-in-swindon.html', to: 'https://www.conexxus.co.uk/blog/website-design-for-small-businesses-in-swindon' },
   { from: 'https://www.conexxus.co.uk/blog/local-seo-for-swindon-businesses.html', to: 'https://www.conexxus.co.uk/blog/local-seo-for-swindon-businesses' },
   { from: 'https://www.conexxus.co.uk/blog/improve-google-business-profile-swindon.html', to: 'https://www.conexxus.co.uk/blog/improve-google-business-profile-swindon' },
+  { from: 'https://www.conexxus.co.uk/blog/signs-your-business-website-needs-a-redesign.html', to: 'https://www.conexxus.co.uk/blog/signs-your-business-website-needs-a-redesign' },
+  { from: 'https://www.conexxus.co.uk/blog/seo-vs-google-ads-small-business-uk.html', to: 'https://www.conexxus.co.uk/blog/seo-vs-google-ads-small-business-uk' },
+  { from: 'https://www.conexxus.co.uk/blog/how-long-does-local-seo-take.html', to: 'https://www.conexxus.co.uk/blog/how-long-does-local-seo-take' },
+  { from: 'https://www.conexxus.co.uk/blog/mobile-website-speed-local-businesses.html', to: 'https://www.conexxus.co.uk/blog/mobile-website-speed-local-businesses' },
+  { from: 'https://www.conexxus.co.uk/blog/get-more-local-customers-through-google.html', to: 'https://www.conexxus.co.uk/blog/get-more-local-customers-through-google' },
+  { from: 'https://www.conexxus.co.uk/blog/why-small-business-needs-professional-website.html', to: 'https://www.conexxus.co.uk/blog/why-small-business-needs-professional-website' },
   { from: 'https://www.conexxus.co.uk/portfolio/', to: 'https://www.conexxus.co.uk/portfolio' }
 ];
 
@@ -63,6 +75,12 @@ const assets = [
   'https://www.conexxus.co.uk/06-imagens/website-design-for-small-businesses-in-swindon.webp',
   'https://www.conexxus.co.uk/06-imagens/local-seo-for-swindon-businesses.webp',
   'https://www.conexxus.co.uk/06-imagens/improve-google-business-profile-swindon.webp',
+  'https://www.conexxus.co.uk/06-imagens/signs-your-business-website-needs-a-redesign.webp',
+  'https://www.conexxus.co.uk/06-imagens/seo-vs-google-ads-small-business-uk.webp',
+  'https://www.conexxus.co.uk/06-imagens/how-long-does-local-seo-take.webp',
+  'https://www.conexxus.co.uk/06-imagens/mobile-website-speed-local-businesses.webp',
+  'https://www.conexxus.co.uk/06-imagens/get-more-local-customers-through-google.webp',
+  'https://www.conexxus.co.uk/06-imagens/why-small-business-needs-professional-website.webp',
   'https://www.conexxus.co.uk/favicon.ico',
   'https://www.conexxus.co.uk/apple-touch-icon.png',
   'https://www.conexxus.co.uk/assets/js/script.js',

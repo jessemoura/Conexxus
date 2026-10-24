@@ -84,6 +84,12 @@ RewriteRule ^blog/improve-google-business-profile-swindon$ /build/blog/improve-g
 RewriteRule ^blog/digital-marketing-for-small-businesses$ /build/blog/digital-marketing-for-small-businesses.html [L]
 RewriteRule ^blog/social-media-for-small-businesses$ /build/blog/social-media-for-small-businesses.html [L]
 RewriteRule ^blog/why-quality-website-hosting-matters$ /build/blog/why-quality-website-hosting-matters.html [L]
+RewriteRule ^blog/signs-your-business-website-needs-a-redesign$ /build/blog/signs-your-business-website-needs-a-redesign.html [L]
+RewriteRule ^blog/seo-vs-google-ads-small-business-uk$ /build/blog/seo-vs-google-ads-small-business-uk.html [L]
+RewriteRule ^blog/how-long-does-local-seo-take$ /build/blog/how-long-does-local-seo-take.html [L]
+RewriteRule ^blog/mobile-website-speed-local-businesses$ /build/blog/mobile-website-speed-local-businesses.html [L]
+RewriteRule ^blog/get-more-local-customers-through-google$ /build/blog/get-more-local-customers-through-google.html [L]
+RewriteRule ^blog/why-small-business-needs-professional-website$ /build/blog/why-small-business-needs-professional-website.html [L]
 
 # Dynamic blog post handler
 RewriteRule ^blog/([^/]+)$ /build/blog/$1.html [L]

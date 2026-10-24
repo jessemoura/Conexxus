@@ -172,6 +172,12 @@ const requiredFiles = [
   '06-imagens/portfolio-cover-crafix.webp',
   '06-imagens/portfolio-cover-little-pet.webp',
   '06-imagens/portfolio-cover-aroma-oak.webp',
+  '06-imagens/signs-your-business-website-needs-a-redesign.webp',
+  '06-imagens/seo-vs-google-ads-small-business-uk.webp',
+  '06-imagens/how-long-does-local-seo-take.webp',
+  '06-imagens/mobile-website-speed-local-businesses.webp',
+  '06-imagens/get-more-local-customers-through-google.webp',
+  '06-imagens/why-small-business-needs-professional-website.webp',
   'assets/js/script.js',
   'assets/css/style.css'
 ];

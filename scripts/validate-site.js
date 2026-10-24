@@ -163,6 +163,15 @@ const requiredFiles = [
   '06-imagens/conexxus-uk-logo-transparent.png',
   '06-imagens/conexxus-uk-social-preview.png',
   '06-imagens/conexxus-uk-favicon.png',
+  '06-imagens/portfolio-cover-michelly-correa.webp',
+  '06-imagens/portfolio-cover-nikki-studio.webp',
+  '06-imagens/portfolio-cover-sos-aberturas.webp',
+  '06-imagens/portfolio-cover-oxford-barber.webp',
+  '06-imagens/portfolio-cover-nicolas-furoni.webp',
+  '06-imagens/portfolio-cover-lumora-cleaning.webp',
+  '06-imagens/portfolio-cover-crafix.webp',
+  '06-imagens/portfolio-cover-little-pet.webp',
+  '06-imagens/portfolio-cover-aroma-oak.webp',
   'assets/js/script.js',
   'assets/css/style.css'
 ];

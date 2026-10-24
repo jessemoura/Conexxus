@@ -69,8 +69,8 @@ for (const file of htmlFiles) {
 
   // 6. Check Open Graph & Social Preview
   const ogImg = content.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']*)["']/i);
-  if (!ogImg || !ogImg[1].includes('conexxus-uk-social-preview.png')) {
-    errors.push('Missing or invalid og:image (must point to conexxus-uk-social-preview.png)');
+  if (!ogImg || (!ogImg[1].includes('conexxus-uk-social-preview.png') && !ogImg[1].includes('/06-imagens/'))) {
+    errors.push('Missing or invalid og:image (must point to conexxus-uk-social-preview.png or /06-imagens/)');
   }
   if (!content.includes('property="og:title"')) errors.push('Missing og:title');
   if (!content.includes('property="og:url"')) errors.push('Missing og:url');

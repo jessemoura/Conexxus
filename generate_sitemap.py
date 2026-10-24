@@ -22,6 +22,8 @@ today = datetime.now().strftime('%Y-%m-%d')
 sitemap_urls = []
 for file in sorted(html_files):
     rel_path = os.path.relpath(file, build_dir).replace('\\', '/')
+    if rel_path == "404.html":
+        continue
     
     # Priority & frequency rules
     priority = "0.8"

@@ -1,0 +1,21 @@
+{
+  "name": "conexxus-uk",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CONEXXUS UK — Digital Marketing Agency in Swindon",
+  "scripts": {
+    "test": "node scripts/validate-site.js",
+    "build": "python generate_sitemap.py",
+    "verify-live": "node scripts/verify-live.cjs"
+  },
+  "keywords": [
+    "digital-marketing",
+    "swindon",
+    "website-design",
+    "local-seo",
+    "conexxus"
+  ],
+  "author": "CONEXXUS",
+  "license": "UNLICENSED"
+}

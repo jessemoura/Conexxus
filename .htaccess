@@ -1,3 +1,28 @@
-RewriteEngine on
+# CONEXXUS UK — Production Apache Configuration
+RewriteEngine On
+
+# 1. Enforce HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Block access to hidden, private, or configuration files
+<FilesMatch "^\.|\.(py|yaml|yml|md|json|log|sh|bak|sql)$">
+    Require all denied
+</FilesMatch>
+
+# 3. Prevent directory listing
+Options -Indexes
+
+# 4. Error 404
+ErrorDocument 404 /404.html
+
+# 5. Route non-build requests to /build/
 RewriteCond %{REQUEST_URI} !^/build/
 RewriteRule ^(.*)$ /build/$1 [L]
+
+# 6. Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

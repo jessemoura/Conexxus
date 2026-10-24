@@ -3,42 +3,147 @@
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Digital Marketing Agency in Swindon | Conexxus</title>
-<link crossorigin="" href="https://cdn.tailwindcss.com" rel="preconnect"/>
-<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
-<link href="/06-imagens/favicon.png" rel="icon" type="image/png"/>
-<meta content="Build a stronger digital presence with practical solutions designed for small and medium-sized businesses." name="description"/>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<meta name="description" content="Build a stronger digital presence with practical solutions designed for small and medium-sized businesses."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.conexxus.co.uk/"/>
+
+<!-- Favicons & Mobile Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="theme-color" content="#003A70"/>
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="CONEXXUS"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:title" content="Digital Marketing Agency in Swindon | Conexxus"/>
+<meta property="og:description" content="Build a stronger digital presence with practical solutions designed for small and medium-sized businesses."/>
+<meta property="og:url" content="https://www.conexxus.co.uk/"/>
+<meta property="og:image" content="https://www.conexxus.co.uk/06-imagens/conexxus-uk-social-preview.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="CONEXXUS — Digital Marketing Agency in Swindon"/>
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Digital Marketing Agency in Swindon | Conexxus"/>
+<meta name="twitter:description" content="Build a stronger digital presence with practical solutions designed for small and medium-sized businesses."/>
+<meta name="twitter:image" content="https://www.conexxus.co.uk/06-imagens/conexxus-uk-social-preview.png"/>
+
+<!-- Structured Data / Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.conexxus.co.uk/#organization",
+  "name": "CONEXXUS",
+  "alternateName": "Conexxus Digital Marketing",
+  "url": "https://www.conexxus.co.uk/",
+  "logo": "https://www.conexxus.co.uk/06-imagens/conexxus-uk-logo-transparent.png",
+  "image": "https://www.conexxus.co.uk/06-imagens/conexxus-uk-social-preview.png",
+  "description": "Digital marketing agency in Swindon providing website design, local SEO, and Google Business Profile management for small and medium-sized businesses.",
+  "telephone": "+447341462757",
+  "email": "hello@conexxus.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Swindon",
+    "addressRegion": "Wiltshire",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "51.5558",
+    "longitude": "-1.7797"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Swindon"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Wiltshire"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/conexxus.co.uk"
+  ],
+  "priceRange": "$$"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.conexxus.co.uk/#website",
+  "url": "https://www.conexxus.co.uk/",
+  "name": "CONEXXUS",
+  "description": "Digital Marketing Agency in Swindon",
+  "publisher": {
+    "@id": "https://www.conexxus.co.uk/#organization"
+  }
+}
+</script>
+
+<!-- Preconnects & Google Fonts -->
+<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin=""/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin=""/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS (CDN for development) -->
+
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#003A70',
-                        brand: '#0066B3',
-                        champagne_gold: '#D6B66A',
-                        champagne_light: '#E8D39B',
-                        cloud: '#F4F7FA',
-                        graphite: '#181A1B',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    navy: '#003A70',
+                    brand: '#0066B3',
+                    champagne_gold: '#D6B66A',
+                    champagne_light: '#E8D39B',
+                    cloud: '#F4F7FA',
+                    graphite: '#181A1B',
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
                 }
             }
         }
-    </script>
-<!-- Custom CSS -->
-<link href="./assets/css/style.css" rel="stylesheet"/>
-<!-- Alpine Plugins -->
+    }
+</script>
+
+<!-- Custom CSS & Core Analytics -->
+<link rel="stylesheet" href="/assets/css/style.css"/>
+<script defer="" src="/assets/js/script.js"></script>
+
+<!-- Alpine Plugins & Alpine.js -->
 <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-<!-- Alpine.js -->
 <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="font-sans text-graphite bg-white antialiased">
@@ -47,12 +152,12 @@
 <div class="container mx-auto px-6 flex items-center justify-between">
 <!-- Logo -->
 <a class="flex-shrink-0" href="/">
-<img :class="isScrolled ? 'h-10 lg:h-20' : 'h-16 lg:h-20'" alt="Conexxus Digital Marketing" class="w-auto transition-all duration-300" src="/06-imagens/Conexxus-digital-marketing-logo-transparent.png"/>
+<img :class="isScrolled ? 'h-9 lg:h-11' : 'h-10 lg:h-12'" alt="CONEXXUS — Digital Marketing Agency in Swindon" class="w-auto transition-all duration-300" src="/06-imagens/conexxus-uk-logo-transparent.png"/>
 </a>
 <!-- Desktop Menu -->
 <nav class="hidden lg:flex items-center space-x-8 font-semibold">
 <a class="hover:text-champagne_gold transition-colors" href="index.html">Home</a>
-<!-- Dropdown ServiÃƒÂ§os -->
+<!-- Dropdown Services -->
 <div @click.outside="open = false" @mouseenter="open = true" @mouseleave="open = false" class="relative" x-data="{ open: false }">
 <a class="flex items-center gap-1 hover:text-champagne_gold transition-colors" href="servicos.html">
                         Services
@@ -405,7 +510,7 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
 <!-- Brand -->
 <div class="space-y-4">
-<img alt="Conexxus Digital Marketing" class="h-12 w-auto" src="/06-imagens/Conexxus-digital-marketing-logo-transparent.png"/>
+<img alt="CONEXXUS — Digital Marketing Agency in Swindon" class="h-10 lg:h-11 w-auto" src="/06-imagens/conexxus-uk-logo-transparent.png"/>
 <p class="text-champagne_gold font-semibold italic">Connecting businesses with people.</p>
 <p class="text-sm leading-relaxed mt-4">
                         Digital Marketing Agency<br/>
@@ -439,7 +544,7 @@
 </div>
 </div>
 <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-<p>© 2026 Conexxus Digital Marketing. All rights reserved. <span class="hidden md:inline mx-1">|</span><br class="md:hidden"/> Developed by CONEXXUS Digital</p>
+<p>© 2026 CONEXXUS. All rights reserved. <span class="hidden md:inline mx-1">|</span><br class="md:hidden"/> Digital Marketing Agency in Swindon</p>
 <div class="flex gap-4">
 <a class="hover:text-white transition-colors" href="/privacidade.html">Privacy Policy</a>
 </div>

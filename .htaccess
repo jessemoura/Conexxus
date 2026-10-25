@@ -77,6 +77,7 @@ RewriteRule ^services/local-seo$ /build/services/local-seo.html [L]
 RewriteRule ^services/google-business-profile$ /build/services/google-business-profile.html [L]
 
 # Clean blog articles (explicit mappings)
+RewriteRule ^blog/conexxus-uk-and-conexus-brazil-international-digital-presence$ /build/blog/conexxus-uk-and-conexus-brazil-international-digital-presence.html [L]
 RewriteRule ^blog/how-much-does-a-website-cost-in-swindon$ /build/blog/how-much-does-a-website-cost-in-swindon.html [L]
 RewriteRule ^blog/website-design-for-small-businesses-in-swindon$ /build/blog/website-design-for-small-businesses-in-swindon.html [L]
 RewriteRule ^blog/local-seo-for-swindon-businesses$ /build/blog/local-seo-for-swindon-businesses.html [L]

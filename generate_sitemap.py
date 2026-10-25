@@ -33,6 +33,7 @@ CLEAN_PAGES = [
     ("contact", "0.8", "monthly"),
     ("privacy", "0.8", "monthly"),
     # Blog Posts
+    ("blog/conexxus-uk-and-conexus-brazil-international-digital-presence", "0.8", "monthly"),
     ("blog/how-much-does-a-website-cost-in-swindon", "0.7", "monthly"),
     ("blog/website-design-for-small-businesses-in-swindon", "0.7", "monthly"),
     ("blog/local-seo-for-swindon-businesses", "0.7", "monthly"),

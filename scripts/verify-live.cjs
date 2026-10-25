@@ -25,6 +25,7 @@ const cleanPages = [
   'https://www.conexxus.co.uk/blog/mobile-website-speed-local-businesses',
   'https://www.conexxus.co.uk/blog/get-more-local-customers-through-google',
   'https://www.conexxus.co.uk/blog/why-small-business-needs-professional-website',
+  'https://www.conexxus.co.uk/blog/conexxus-uk-and-conexus-brazil-international-digital-presence',
   'https://www.conexxus.co.uk/sitemap.xml',
   'https://www.conexxus.co.uk/robots.txt'
 ];
@@ -81,6 +82,7 @@ const assets = [
   'https://www.conexxus.co.uk/06-imagens/mobile-website-speed-local-businesses.webp',
   'https://www.conexxus.co.uk/06-imagens/get-more-local-customers-through-google.webp',
   'https://www.conexxus.co.uk/06-imagens/why-small-business-needs-professional-website.webp',
+  'https://www.conexxus.co.uk/06-imagens/conexxus-uk-and-conexus-brazil-international-digital-presence.webp',
   'https://www.conexxus.co.uk/favicon.ico',
   'https://www.conexxus.co.uk/apple-touch-icon.png',
   'https://www.conexxus.co.uk/assets/js/script.js',

@@ -178,6 +178,7 @@ const requiredFiles = [
   '06-imagens/mobile-website-speed-local-businesses.webp',
   '06-imagens/get-more-local-customers-through-google.webp',
   '06-imagens/why-small-business-needs-professional-website.webp',
+  '06-imagens/conexxus-uk-and-conexus-brazil-international-digital-presence.webp',
   'assets/js/script.js',
   'assets/css/style.css'
 ];
